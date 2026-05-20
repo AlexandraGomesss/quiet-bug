@@ -30,6 +30,7 @@ This is useful for:
 - Filled the user flows document.
 - Filled the exercise format document.
 - Filled the security notes document.
+- Added the content plan document with the first Java exercises, soft skills topics and employer mindset topics.
 
 ### Decisions made
 
@@ -62,8 +63,7 @@ This is useful for:
 
 ### Next steps
 
-- Fill the remaining documentation files if needed.
-- Create the first content plan.
-- Define the first 10 Java exercises.
-- Start the frontend structure.
-- Build the first static version before adding backend complexity.
+- Create the first Java exercise content.
+- Start with "Find the Maximum Number in an Array".
+- Keep the exercise format consistent with `docs/06-exercise-format.md`.
+- Build the first static frontend after the initial content is ready.
