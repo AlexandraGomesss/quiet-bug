@@ -22,17 +22,17 @@ Documentation and content planning.
 
 ## Last Completed Step
 
-Created the seventh Java exercise content:
+Created the eighth Java exercise content:
 
-- Validate a Password
+- Check if All Numbers Are Positive
 
 ## Next Step
 
-Create the eighth Java exercise content.
+Create the ninth Java exercise content.
 
-Eighth exercise:
+Ninth exercise:
 
-Check if All Numbers Are Positive
+Create a Student Class with isPassed
 
 ## Important Decisions
 
