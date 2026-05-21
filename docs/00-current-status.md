@@ -22,7 +22,9 @@ Documentation and content planning.
 
 ## Last Completed Step
 
-Created the initial documentation base:
+Created the first Java exercise content:
+
+- Find the Maximum Number in an Array
 
 - README
 - product foundation
@@ -35,11 +37,11 @@ Created the initial documentation base:
 
 ## Next Step
 
-Create the first Java exercise content.
+Create the second Java exercise content.
 
-First exercise:
+Second exercise:
 
-Find the Maximum Number in an Array
+Count Even Numbers
 
 ## Important Decisions
 

@@ -23,7 +23,7 @@ The goal is to create enough content to test the main product experience:
 
 | Number | Exercise | Main Pattern | Status |
 |---|---|---|---|
-| 1 | Find the Maximum Number in an Array | Loop, helper variable, comparison | Not started |
+| 1 | Find the Maximum Number in an Array | Loop, helper variable, comparison | Drafted |
 | 2 | Count Even Numbers | Loop, condition, counter | Not started |
 | 3 | Sum Positive Numbers | Loop, condition, accumulator | Not started |
 | 4 | Check if an Array Contains a Number | Loop, boolean return, early return | Not started |
