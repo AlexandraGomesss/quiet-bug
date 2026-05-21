@@ -22,17 +22,23 @@ Documentation and content planning.
 
 ## Last Completed Step
 
-Created the ninth Java exercise content:
+Completed the first batch of 10 Java exercise drafts.
 
-- Create a Student Class with isPassed
+Latest exercise created:
+
+- Create a BankAccount Class with Validation
 
 ## Next Step
 
-Create the tenth Java exercise content.
+Review the 10 Java exercise drafts for consistency before starting the frontend.
 
-Tenth exercise:
+Next review target:
 
-Create a BankAccount Class with Validation
+- exercise titles
+- file names
+- status values
+- patterns
+- structure consistency
 
 ## Important Decisions
 

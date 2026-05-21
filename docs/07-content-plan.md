@@ -32,7 +32,7 @@ The goal is to create enough content to test the main product experience:
 | 7 | Validate a Password | Conditions, boolean logic, validation | Drafted |
 | 8 | Check if All Numbers Are Positive | Loop, condition, early return | Drafted |
 | 9 | Create Student Class with isPassed | OOP, class, constructor, method | Drafted |
-| 10 | Create a BankAccount Class with Validation | OOP, encapsulation, validation | Not started |
+| 10 | Create a BankAccount Class with Validation | OOP, encapsulation, validation, methods | Drafted |
 
 ---
 

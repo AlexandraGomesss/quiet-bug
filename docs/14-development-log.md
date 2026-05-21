@@ -15,6 +15,30 @@ This is useful for:
 
 ---
 
+## 2026-05-21
+
+### What I worked on
+
+- Created the first batch of 10 Java exercise drafts.
+- Updated the content plan after completing the first exercise batch.
+- Updated the current status document.
+
+### Decisions made
+
+- The first content milestone is complete when all 10 Java exercises are drafted and reviewed.
+
+### Problems found
+
+- IntelliJ may show Java inspection warnings inside Markdown code examples.
+- These warnings can be ignored when the file is documentation and not real Java source code.
+
+### Next steps
+
+- Review the 10 Java exercise drafts for consistency.
+- Check that the content plan matches the created files.
+- Prepare the first static frontend structure.
+- Build the first page using static data.
+
 ## 2026-05-20
 
 ### What I worked on
