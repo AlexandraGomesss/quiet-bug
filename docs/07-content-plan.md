@@ -31,7 +31,7 @@ The goal is to create enough content to test the main product experience:
 | 6 | Count Vowels in a String | String, charAt, condition, counter | Drafted |
 | 7 | Validate a Password | Conditions, boolean logic, validation | Drafted |
 | 8 | Check if All Numbers Are Positive | Loop, condition, early return | Drafted |
-| 9 | Create a Student Class with isPassed | OOP, class, constructor, method | Not started |
+| 9 | Create Student Class with isPassed | OOP, class, constructor, method | Drafted |
 | 10 | Create a BankAccount Class with Validation | OOP, encapsulation, validation | Not started |
 
 ---
