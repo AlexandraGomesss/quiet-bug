@@ -22,17 +22,17 @@ Documentation and content planning.
 
 ## Last Completed Step
 
-Created the sixth Java exercise content:
+Created the seventh Java exercise content:
 
-- Count Vowels in a String
+- Validate a Password
 
 ## Next Step
 
-Create the seventh Java exercise content.
+Create the eighth Java exercise content.
 
-Seventh exercise:
+Eighth exercise:
 
-Validate a Password
+Check if All Numbers Are Positive
 
 ## Important Decisions
 
