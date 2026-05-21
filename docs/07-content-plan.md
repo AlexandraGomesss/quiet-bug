@@ -28,7 +28,7 @@ The goal is to create enough content to test the main product experience:
 | 3 | Sum Positive Numbers | Loop, condition, accumulator | Drafted |
 | 4 | Check if an Array Contains a Number | Loop, boolean return, early return | Drafted |
 | 5 | Reverse a String | String traversal, loop, result builder | Drafted |
-| 6 | Count Vowels in a String | String, charAt, condition, counter | Not started |
+| 6 | Count Vowels in a String | String, charAt, condition, counter | Drafted |
 | 7 | Validate a Password | Conditions, boolean logic, validation | Not started |
 | 8 | Check if All Numbers Are Positive | Loop, condition, early return | Not started |
 | 9 | Create a Student Class with isPassed | OOP, class, constructor, method | Not started |

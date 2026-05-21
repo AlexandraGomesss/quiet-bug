@@ -22,17 +22,17 @@ Documentation and content planning.
 
 ## Last Completed Step
 
-Created the fifth Java exercise content:
+Created the sixth Java exercise content:
 
-- Reverse a String
+- Count Vowels in a String
 
 ## Next Step
 
-Create the sixth Java exercise content.
+Create the seventh Java exercise content.
 
-Sixth exercise:
+Seventh exercise:
 
-Count Vowels in a String
+Validate a Password
 
 ## Important Decisions
 
