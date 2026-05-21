@@ -23,17 +23,17 @@ Documentation and content planning.
 
 ## Last Completed Step
 
-Created the second Java exercise content:
+Created the third Java exercise content:
 
-- Count Even Numbers
+- Sum Positive Numbers
 
 ## Next Step
 
-Create the third Java exercise content.
+Create the fourth Java exercise content.
 
-Third exercise:
+Fourth exercise:
 
-Sum Positive Numbers
+Check if an Array Contains a Number
 
 ## Important Decisions
 
