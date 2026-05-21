@@ -27,7 +27,7 @@ The goal is to create enough content to test the main product experience:
 | 2 | Count Even Numbers | Loop, condition, counter | Drafted |
 | 3 | Sum Positive Numbers | Loop, condition, accumulator | Drafted |
 | 4 | Check if an Array Contains a Number | Loop, boolean return, early return | Drafted |
-| 5 | Reverse a String | String traversal, loop | Not started |
+| 5 | Reverse a String | String traversal, loop, result builder | Drafted |
 | 6 | Count Vowels in a String | String, charAt, condition, counter | Not started |
 | 7 | Validate a Password | Conditions, boolean logic, validation | Not started |
 | 8 | Check if All Numbers Are Positive | Loop, condition, early return | Not started |

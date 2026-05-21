@@ -22,17 +22,17 @@ Documentation and content planning.
 
 ## Last Completed Step
 
-Created the fourth Java exercise content:
+Created the fifth Java exercise content:
 
-- Check if an Array Contains a Number
+- Reverse a String
 
 ## Next Step
 
-Create the fifth Java exercise content.
+Create the sixth Java exercise content.
 
-Fifth exercise:
+Sixth exercise:
 
-Reverse a String
+Count Vowels in a String
 
 ## Important Decisions
 
