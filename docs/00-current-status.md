@@ -20,28 +20,20 @@ The product focuses on helping candidates show what they know with confidence, e
 
 Documentation and content planning.
 
+
 ## Last Completed Step
 
-Created the first Java exercise content:
+Created the second Java exercise content:
 
-- Find the Maximum Number in an Array
-
-- README
-- product foundation
-- MVP scope
-- user flows
-- exercise format
-- content plan
-- security notes
-- development log
+- Count Even Numbers
 
 ## Next Step
 
-Create the second Java exercise content.
+Create the third Java exercise content.
 
-Second exercise:
+Third exercise:
 
-Count Even Numbers
+Sum Positive Numbers
 
 ## Important Decisions
 
