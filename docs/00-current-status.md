@@ -20,20 +20,19 @@ The product focuses on helping candidates show what they know with confidence, e
 
 Documentation and content planning.
 
-
 ## Last Completed Step
 
-Created the third Java exercise content:
+Created the fourth Java exercise content:
 
-- Sum Positive Numbers
+- Check if an Array Contains a Number
 
 ## Next Step
 
-Create the fourth Java exercise content.
+Create the fifth Java exercise content.
 
-Fourth exercise:
+Fifth exercise:
 
-Check if an Array Contains a Number
+Reverse a String
 
 ## Important Decisions
 
