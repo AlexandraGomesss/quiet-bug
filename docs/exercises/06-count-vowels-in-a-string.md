@@ -263,4 +263,4 @@ To avoid checking both uppercase and lowercase vowels, I’ll convert the string
 
 ## Status
 
-Drafted.
+Reviewed

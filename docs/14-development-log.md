@@ -15,6 +15,39 @@ This is useful for:
 
 ---
 
+## 2026-05-22
+
+### What I worked on
+
+- Reviewed the first batch of 10 Java exercise drafts for consistency.
+- Checked exercise titles, file names, status values and section structure.
+- Updated the content plan to mark the Java exercise batch as reviewed.
+- Updated the current status document for the frontend foundation phase.
+- Created the first static frontend structure with HTML, CSS and JavaScript.
+- Added static exercise data for the first 10 Java exercises.
+- Built the first Java practice page flow with exercise selection, checklist, code area, stuck hints, solution and feedback sections.
+- Updated the README current status.
+
+### Decisions made
+
+- Exercise status values should use `Reviewed` once the draft has passed the consistency review.
+- The first frontend prototype will use plain HTML, CSS and JavaScript so it can run without dependency setup.
+
+### Problems found
+
+- Exercise 9 had a title mismatch between the content plan and the exercise file.
+- Exercise files used `Drafted.` while the content plan used status values without punctuation.
+- The browser layout still needs a visual review after the first static files are opened locally.
+
+### Next steps
+
+- Open the static frontend in the browser.
+- Review desktop and mobile layout.
+- Refine the first practice flow.
+- Decide whether to keep plain static files or move to a frontend framework.
+
+---
+
 ## 2026-05-21
 
 ### What I worked on

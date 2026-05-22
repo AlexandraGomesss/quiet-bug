@@ -232,4 +232,4 @@ Because I need the characters in reverse order, I’ll loop from the last index 
 
 ## Status
 
-Drafted.
+Reviewed

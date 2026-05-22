@@ -241,4 +241,4 @@ I need to calculate a total, so I’ll use a loop and an accumulator variable.
 
 ## Status
 
-Drafted.
+Reviewed

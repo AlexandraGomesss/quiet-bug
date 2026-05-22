@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiet Bug</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Exercise navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">QB</div>
+          <div>
+            <p class="eyebrow">Quiet Bug</p>
+            <h1>Java practice</h1>
+          </div>
+        </div>
+
+        <div class="sidebar-copy">
+          <p>Debug your nerves before the interview.</p>
+        </div>
+
+        <nav class="exercise-list" id="exerciseList" aria-label="Java exercises"></nav>
+      </aside>
+
+      <main class="workspace">
+        <section class="topbar" aria-label="Current exercise summary">
+          <div>
+            <p class="eyebrow" id="exerciseMeta">Java / Junior</p>
+            <h2 id="exerciseTitle">Loading exercise</h2>
+          </div>
+          <div class="topbar-actions">
+            <button class="secondary-button" id="resetButton" type="button">Reset</button>
+          </div>
+        </section>
+
+        <section class="exercise-grid">
+          <article class="panel problem-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Problem</p>
+              <h3>Prompt</h3>
+            </div>
+            <p id="exercisePrompt"></p>
+
+            <div class="example-grid">
+              <div>
+                <p class="label">Example input</p>
+                <pre><code id="exampleInput"></code></pre>
+              </div>
+              <div>
+                <p class="label">Expected output</p>
+                <pre><code id="expectedOutput"></code></pre>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel checklist-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Before coding</p>
+              <h3>Thinking checklist</h3>
+            </div>
+            <form id="checklistForm" class="checklist"></form>
+          </article>
+
+          <article class="panel code-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Practice area</p>
+              <h3>Your code</h3>
+            </div>
+            <textarea id="codeArea" spellcheck="false" aria-label="Write your Java solution"></textarea>
+          </article>
+
+          <article class="panel hint-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Panic recovery</p>
+              <h3>Stuck hints</h3>
+            </div>
+            <div id="hintList" class="hint-list"></div>
+            <button class="primary-button" id="hintButton" type="button">I'm stuck</button>
+          </article>
+        </section>
+
+        <section class="details-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Communication</p>
+              <h3>Speak while coding</h3>
+            </div>
+            <p id="oralExplanation"></p>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Review</p>
+              <h3>Suggested solution</h3>
+            </div>
+            <pre class="solution-block"><code id="suggestedSolution"></code></pre>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Interview lens</p>
+              <h3>Feedback</h3>
+            </div>
+            <ul id="feedbackList" class="feedback-list"></ul>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Employer mindset</p>
+              <h3>What they notice</h3>
+            </div>
+            <p id="employerPerspective"></p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="src/exercises.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>

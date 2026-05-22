@@ -23,16 +23,16 @@ The goal is to create enough content to test the main product experience:
 
 | Number | Exercise | Main Pattern | Status |
 |---|---|---|---|
-| 1 | Find the Maximum Number in an Array | Loop, helper variable, comparison | Drafted |
-| 2 | Count Even Numbers | Loop, condition, counter | Drafted |
-| 3 | Sum Positive Numbers | Loop, condition, accumulator | Drafted |
-| 4 | Check if an Array Contains a Number | Loop, boolean return, early return | Drafted |
-| 5 | Reverse a String | String traversal, loop, result builder | Drafted |
-| 6 | Count Vowels in a String | String, charAt, condition, counter | Drafted |
-| 7 | Validate a Password | Conditions, boolean logic, validation | Drafted |
-| 8 | Check if All Numbers Are Positive | Loop, condition, early return | Drafted |
-| 9 | Create Student Class with isPassed | OOP, class, constructor, method | Drafted |
-| 10 | Create a BankAccount Class with Validation | OOP, encapsulation, validation, methods | Drafted |
+| 1 | Find the Maximum Number in an Array | Loop, helper variable, comparison | Reviewed |
+| 2 | Count Even Numbers | Loop, condition, counter | Reviewed |
+| 3 | Sum Positive Numbers | Loop, condition, accumulator | Reviewed |
+| 4 | Check if an Array Contains a Number | Loop, boolean return, early return | Reviewed |
+| 5 | Reverse a String | String traversal, loop, result builder | Reviewed |
+| 6 | Count Vowels in a String | String, charAt, condition, counter | Reviewed |
+| 7 | Validate a Password | Conditions, boolean logic, validation | Reviewed |
+| 8 | Check if All Numbers Are Positive | Loop, condition, early return | Reviewed |
+| 9 | Create a Student Class with isPassed | OOP, class, constructor, method | Reviewed |
+| 10 | Create a BankAccount Class with Validation | OOP, encapsulation, validation, methods | Reviewed |
 
 ---
 

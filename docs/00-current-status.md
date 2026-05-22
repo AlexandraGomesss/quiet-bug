@@ -18,27 +18,36 @@ The product focuses on helping candidates show what they know with confidence, e
 
 ## Current Phase
 
-Documentation and content planning.
+Frontend foundation.
 
 ## Last Completed Step
 
-Completed the first batch of 10 Java exercise drafts.
+Created the first static frontend structure.
 
-Latest exercise created:
+Frontend foundation includes:
 
-- Create a BankAccount Class with Validation
+- `index.html`
+- `src/styles.css`
+- `src/exercises.js`
+- `src/app.js`
+- static data for the first 10 Java exercises
+- exercise selection
+- thinking checklist
+- code textarea
+- progressive panic recovery hints
+- oral explanation, solution, feedback and employer perspective sections
 
 ## Next Step
 
-Review the 10 Java exercise drafts for consistency before starting the frontend.
+Review the static frontend in the browser and refine the first practice flow.
 
 Next review target:
 
-- exercise titles
-- file names
-- status values
-- patterns
-- structure consistency
+- layout on desktop and mobile
+- exercise switching
+- hint behavior
+- code textarea reset behavior
+- content readability
 
 ## Important Decisions
 
@@ -49,6 +58,7 @@ Next review target:
 - MVP v0 does not execute user code.
 - MVP v0 does not use AI feedback.
 - MVP v0 uses static exercise data first.
+- The first frontend prototype uses plain HTML, CSS and JavaScript.
 - Backend and database will be added later.
 - The first version focuses on live coding fear, structure, communication, panic recovery and soft skills.
 

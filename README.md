@@ -27,4 +27,6 @@ The first version focuses on:
 
 ## Current Status
 
-Project documentation phase.
+Static frontend foundation started.
+
+The project now includes a dependency-free HTML/CSS/JavaScript prototype using static Java exercise data.
