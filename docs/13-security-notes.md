@@ -97,6 +97,10 @@ The `.gitignore` file should ignore local environment files such as:
 .env.local
 ```
 
+The repository may include `.env.example` with placeholder values only.
+
+Real values must stay in ignored local files and must not be committed.
+
 ## User Data
 
 MVP v0 does not store user accounts or personal progress.
