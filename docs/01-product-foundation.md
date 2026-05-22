@@ -54,6 +54,25 @@ The product helps users:
 
 Quiet Bug helps junior developers turn live coding panic into structured interview performance.
 
+## Product Principle
+
+Quiet Bug should stay small, focused and practical.
+
+The exercises can be beginner-friendly, but the practice should not feel shallow.
+
+Each exercise should train serious interview habits:
+
+- clarifying the problem before coding
+- explaining the approach out loud
+- checking edge cases
+- answering follow-up questions
+- recovering calmly after getting stuck
+- showing learning mindset as a junior candidate
+
+The goal is not to become a large algorithm platform.
+
+The goal is to help juniors practise the parts of interviews that usually create fear.
+
 ## What Makes Quiet Bug Different
 
 Quiet Bug is not just another coding exercise platform.

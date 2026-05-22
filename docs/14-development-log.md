@@ -26,12 +26,16 @@ This is useful for:
 - Created the first static frontend structure with HTML, CSS and JavaScript.
 - Added static exercise data for the first 10 Java exercises.
 - Built the first Java practice page flow with exercise selection, checklist, code area, stuck hints, solution and feedback sections.
+- Added interview follow-up questions and edge case prompts to make beginner exercises feel more interview-realistic.
+- Added the first soft skills practice cards for interview day situations.
+- Documented the product principle: simple junior exercises, serious interview habits.
 - Updated the README current status.
 
 ### Decisions made
 
 - Exercise status values should use `Reviewed` once the draft has passed the consistency review.
 - The first frontend prototype will use plain HTML, CSS and JavaScript so it can run without dependency setup.
+- Quiet Bug should stay small and focused, but should avoid feeling shallow by adding interview pressure around each beginner exercise.
 
 ### Problems found
 
@@ -44,6 +48,7 @@ This is useful for:
 - Open the static frontend in the browser.
 - Review desktop and mobile layout.
 - Refine the first practice flow.
+- Review whether the follow-up questions and soft skills cards match real junior interview pressure.
 - Decide whether to keep plain static files or move to a frontend framework.
 
 ---

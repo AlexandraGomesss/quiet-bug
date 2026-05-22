@@ -35,6 +35,9 @@ Frontend foundation includes:
 - thinking checklist
 - code textarea
 - progressive panic recovery hints
+- interview follow-up questions
+- edge case prompts
+- soft skills interview practice cards
 - oral explanation, solution, feedback and employer perspective sections
 
 ## Next Step
@@ -46,6 +49,8 @@ Next review target:
 - layout on desktop and mobile
 - exercise switching
 - hint behavior
+- follow-up question usefulness
+- soft skills card usefulness
 - code textarea reset behavior
 - content readability
 

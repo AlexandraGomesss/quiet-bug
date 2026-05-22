@@ -1,3 +1,24 @@
+window.QUIET_BUG_SOFT_SKILLS = [
+  {
+    title: "When you get stuck",
+    question: "What do you do when you do not immediately know the answer?",
+    guidance: "Name what you know, ask a clarifying question, and reduce the problem to a smaller first step.",
+    answerFrame: "I would start by clarifying the input and output, then solve the simplest version first."
+  },
+  {
+    title: "Explaining a mistake",
+    question: "What do you say if you notice your solution has a bug?",
+    guidance: "Stay calm, describe what you observed, and explain the correction instead of apologizing repeatedly.",
+    answerFrame: "I noticed this case fails because of the condition, so I am going to adjust that rule and retest the example."
+  },
+  {
+    title: "Showing learning mindset",
+    question: "How do you show potential when you do not have professional experience yet?",
+    guidance: "Connect your answer to practice, feedback, projects, and how you improve after getting stuck.",
+    answerFrame: "I am still junior, but I try to show how I think, ask questions, and improve after feedback."
+  }
+];
+
 window.QUIET_BUG_EXERCISES = [
   {
     id: 1,
@@ -14,6 +35,12 @@ window.QUIET_BUG_EXERCISES = [
       "Use a variable to remember the largest number found so far.",
       "Before using numbers[0], check if the array is null or empty."
     ],
+    followUps: [
+      "Why is starting max at 0 risky?",
+      "How would your solution behave with only negative numbers?",
+      "What would you say if the interviewer asked about an empty array?"
+    ],
+    edgeCases: ["null array", "empty array", "one value", "all negative numbers", "repeated maximum values"],
     oralExplanation: "I'll start by checking if the array is null or empty. Then I'll assume the first element is the largest value. I'll loop through the rest of the array and update max when I find a larger number.",
     solution: "public static int findMax(int[] numbers) {\n    if (numbers == null || numbers.length == 0) {\n        throw new IllegalArgumentException(\"Array cannot be null or empty\");\n    }\n\n    int max = numbers[0];\n\n    for (int i = 1; i < numbers.length; i++) {\n        if (numbers[i] > max) {\n            max = numbers[i];\n        }\n    }\n\n    return max;\n}",
     feedback: ["Identify input and output before coding.", "Use a helper variable instead of guessing.", "Mention null and empty arrays as edge cases."],
@@ -30,6 +57,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "3",
     starterCode: "public static int countEven(int[] numbers) {\n    // Your code here\n}",
     hints: ["You need to inspect every number.", "Use a counter that starts at zero.", "A number is even when number % 2 == 0."],
+    followUps: [
+      "What does the modulo operator do here?",
+      "What should happen if the array is empty?",
+      "How would you test a case with no even numbers?"
+    ],
+    edgeCases: ["null array", "empty array", "all odd numbers", "zero", "negative even numbers"],
     oralExplanation: "I'll loop through the array and use a counter. For each number, I'll check if it is divisible by two. If it is, I'll increase the counter and return it at the end.",
     solution: "public static int countEven(int[] numbers) {\n    if (numbers == null) {\n        return 0;\n    }\n\n    int count = 0;\n\n    for (int number : numbers) {\n        if (number % 2 == 0) {\n            count++;\n        }\n    }\n\n    return count;\n}",
     feedback: ["Use modulo clearly.", "Initialize the counter before the loop.", "Explain what happens with an empty array."],
@@ -46,6 +79,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "10",
     starterCode: "public static int sumPositive(int[] numbers) {\n    // Your code here\n}",
     hints: ["You need an accumulator variable.", "Only add numbers greater than zero.", "Zero is not positive."],
+    followUps: [
+      "Why does the sum start at 0?",
+      "Should zero be included?",
+      "What should the method return if there are no positive numbers?"
+    ],
+    edgeCases: ["null array", "empty array", "all negative numbers", "only zeroes", "large positive values"],
     oralExplanation: "I'll create a sum variable starting at zero. Then I'll loop through the numbers and only add values that are greater than zero.",
     solution: "public static int sumPositive(int[] numbers) {\n    if (numbers == null) {\n        return 0;\n    }\n\n    int sum = 0;\n\n    for (int number : numbers) {\n        if (number > 0) {\n            sum += number;\n        }\n    }\n\n    return sum;\n}",
     feedback: ["Separate the condition from the accumulation.", "Be clear that zero is ignored.", "Keep the return outside the loop."],
@@ -62,6 +101,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "true",
     starterCode: "public static boolean containsNumber(int[] numbers, int target) {\n    // Your code here\n}",
     hints: ["Compare each number with the target.", "Return true as soon as you find a match.", "Return false after the loop finishes."],
+    followUps: [
+      "Why can you return true immediately?",
+      "Where should the false return go?",
+      "How would you test when the target appears at the end?"
+    ],
+    edgeCases: ["null array", "empty array", "target at first position", "target at last position", "target not found"],
     oralExplanation: "I'll scan the array one item at a time. If any number equals the target, I can return true immediately. If the loop finishes with no match, I'll return false.",
     solution: "public static boolean containsNumber(int[] numbers, int target) {\n    if (numbers == null) {\n        return false;\n    }\n\n    for (int number : numbers) {\n        if (number == target) {\n            return true;\n        }\n    }\n\n    return false;\n}",
     feedback: ["Use early return intentionally.", "Do not return false too early.", "Explain the no-match path."],
@@ -78,6 +123,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "edoc",
     starterCode: "public static String reverse(String text) {\n    // Your code here\n}",
     hints: ["Start from the last character.", "Move backwards through the string.", "Use StringBuilder for the result."],
+    followUps: [
+      "Why does the loop start at length - 1?",
+      "What happens with an empty string?",
+      "Why might StringBuilder be better than repeated string concatenation?"
+    ],
+    edgeCases: ["null string", "empty string", "one character", "spaces", "mixed uppercase and lowercase"],
     oralExplanation: "I'll handle null first, then build a new string by reading the original text from the last character to the first.",
     solution: "public static String reverse(String text) {\n    if (text == null) {\n        return null;\n    }\n\n    StringBuilder result = new StringBuilder();\n\n    for (int i = text.length() - 1; i >= 0; i--) {\n        result.append(text.charAt(i));\n    }\n\n    return result.toString();\n}",
     feedback: ["Watch the loop boundaries.", "Use charAt correctly.", "Mention empty string behavior."],
@@ -94,6 +145,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "4",
     starterCode: "public static int countVowels(String text) {\n    // Your code here\n}",
     hints: ["Loop through each character.", "Normalize the text to lowercase.", "Check whether the character is a, e, i, o or u."],
+    followUps: [
+      "Why convert the text to lowercase?",
+      "How would you make the vowel check easier to extend?",
+      "Should y count as a vowel in this exercise?"
+    ],
+    edgeCases: ["null string", "empty string", "uppercase vowels", "no vowels", "spaces or punctuation"],
     oralExplanation: "I'll convert the string to lowercase so uppercase vowels are handled the same way. Then I'll loop through every character and count matches.",
     solution: "public static int countVowels(String text) {\n    if (text == null) {\n        return 0;\n    }\n\n    int count = 0;\n    String lowerText = text.toLowerCase();\n\n    for (int i = 0; i < lowerText.length(); i++) {\n        char letter = lowerText.charAt(i);\n\n        if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {\n            count++;\n        }\n    }\n\n    return count;\n}",
     feedback: ["Handle uppercase input.", "Keep the vowel condition readable.", "Use a counter rather than returning inside the loop."],
@@ -110,6 +167,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "true",
     starterCode: "public static boolean isValidPassword(String password) {\n    // Your code here\n}",
     hints: ["Check null before checking length.", "Use length for the minimum size rule.", "Loop through characters to find a digit."],
+    followUps: [
+      "Why check null before length?",
+      "How would you add an uppercase-letter rule?",
+      "Which tests would prove the validation works?"
+    ],
+    edgeCases: ["null password", "7 characters", "8 characters with no digit", "8 characters with a digit", "digit at the end"],
     oralExplanation: "I'll first reject null or short passwords. Then I'll scan the characters and return true when I find at least one digit.",
     solution: "public static boolean isValidPassword(String password) {\n    if (password == null || password.length() < 8) {\n        return false;\n    }\n\n    for (int i = 0; i < password.length(); i++) {\n        if (Character.isDigit(password.charAt(i))) {\n            return true;\n        }\n    }\n\n    return false;\n}",
     feedback: ["Validate the simplest rules first.", "Use Character.isDigit for clarity.", "Explain why false is returned at the end."],
@@ -126,6 +189,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "true",
     starterCode: "public static boolean allPositive(int[] numbers) {\n    // Your code here\n}",
     hints: ["Look for the failure case.", "If any number is zero or negative, return false.", "Return true only after checking all numbers."],
+    followUps: [
+      "Why is it useful to look for the failure case first?",
+      "Should zero count as positive?",
+      "Why should true be returned after the loop?"
+    ],
+    edgeCases: ["null array", "empty array", "contains zero", "contains a negative number", "all positive numbers"],
     oralExplanation: "I'll loop through the numbers and look for anything that is not positive. If I find one, I can return false. If not, all numbers are positive.",
     solution: "public static boolean allPositive(int[] numbers) {\n    if (numbers == null || numbers.length == 0) {\n        return false;\n    }\n\n    for (int number : numbers) {\n        if (number <= 0) {\n            return false;\n        }\n    }\n\n    return true;\n}",
     feedback: ["Think about the negative path first.", "Treat zero as not positive.", "Return true after the loop, not inside it."],
@@ -142,6 +211,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "true",
     starterCode: "public class Student {\n    // attributes\n\n    // constructor\n\n    // getters\n\n    // isPassed method\n}",
     hints: ["Start with private attributes.", "Use the constructor to initialize name and grade.", "isPassed should return grade >= 50."],
+    followUps: [
+      "Why should the fields be private?",
+      "Where would you validate the grade?",
+      "How would the class change if the pass mark were configurable?"
+    ],
+    edgeCases: ["grade below 50", "grade exactly 50", "grade above 50", "empty student name", "grade outside 0 to 100"],
     oralExplanation: "I'll model the student with private fields and a constructor. The isPassed method can use the grade field directly and return whether it meets the passing threshold.",
     solution: "public class Student {\n    private String name;\n    private int grade;\n\n    public Student(String name, int grade) {\n        this.name = name;\n        this.grade = grade;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public int getGrade() {\n        return grade;\n    }\n\n    public boolean isPassed() {\n        return grade >= 50;\n    }\n}",
     feedback: ["Use private fields.", "Keep isPassed focused on one rule.", "Explain the threshold clearly."],
@@ -158,6 +233,12 @@ window.QUIET_BUG_EXERCISES = [
     expectedOutput: "120.0",
     starterCode: "public class BankAccount {\n    // attributes\n\n    // constructor\n\n    // getters\n\n    // deposit method\n\n    // withdraw method\n}",
     hints: ["Use private attributes to protect object state.", "Validate constructor inputs before assigning fields.", "Change balance only through deposit and withdraw."],
+    followUps: [
+      "Why should balance not have a public setter?",
+      "Where should validation happen?",
+      "What should happen if withdraw is greater than the balance?"
+    ],
+    edgeCases: ["empty owner", "negative initial balance", "zero deposit", "negative withdrawal", "withdrawal greater than balance"],
     oralExplanation: "I'll keep owner and balance private. The constructor will validate the initial values, and the balance will only change through deposit and withdraw because those methods enforce the rules.",
     solution: "public class BankAccount {\n    private String owner;\n    private double balance;\n\n    public BankAccount(String owner, double balance) {\n        if (owner == null || owner.isBlank()) {\n            throw new IllegalArgumentException(\"Owner cannot be null or empty\");\n        }\n\n        if (balance < 0) {\n            throw new IllegalArgumentException(\"Initial balance cannot be negative\");\n        }\n\n        this.owner = owner;\n        this.balance = balance;\n    }\n\n    public String getOwner() {\n        return owner;\n    }\n\n    public double getBalance() {\n        return balance;\n    }\n\n    public void deposit(double amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Deposit amount must be greater than zero\");\n        }\n\n        balance += amount;\n    }\n\n    public void withdraw(double amount) {\n        if (amount <= 0 || amount > balance) {\n            throw new IllegalArgumentException(\"Invalid withdrawal amount\");\n        }\n\n        balance -= amount;\n    }\n}",
     feedback: ["Protect state with private fields.", "Avoid a direct balance setter.", "Explain validation as part of encapsulation."],

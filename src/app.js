@@ -24,10 +24,13 @@ const elements = {
   codeArea: document.querySelector("#codeArea"),
   hintList: document.querySelector("#hintList"),
   hintButton: document.querySelector("#hintButton"),
+  followUpList: document.querySelector("#followUpList"),
+  edgeCaseList: document.querySelector("#edgeCaseList"),
   oralExplanation: document.querySelector("#oralExplanation"),
   suggestedSolution: document.querySelector("#suggestedSolution"),
   feedbackList: document.querySelector("#feedbackList"),
   employerPerspective: document.querySelector("#employerPerspective"),
+  softSkillsGrid: document.querySelector("#softSkillsGrid"),
   resetButton: document.querySelector("#resetButton")
 };
 
@@ -40,11 +43,18 @@ function renderExerciseList() {
 
   window.QUIET_BUG_EXERCISES.forEach((exercise) => {
     const button = document.createElement("button");
+    const title = document.createElement("strong");
+    const pattern = document.createElement("span");
+
     button.className = "exercise-button";
     button.type = "button";
     button.dataset.exerciseId = exercise.id;
     button.classList.toggle("active", exercise.id === state.selectedId);
-    button.innerHTML = `<strong>${exercise.id}. ${exercise.title}</strong><span>${exercise.pattern}</span>`;
+
+    title.textContent = `${exercise.id}. ${exercise.title}`;
+    pattern.textContent = exercise.pattern;
+
+    button.append(title, pattern);
 
     button.addEventListener("click", () => {
       state.selectedId = exercise.id;
@@ -62,9 +72,16 @@ function renderChecklist() {
   checklistItems.forEach((item, index) => {
     const id = `check-${index}`;
     const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+    const text = document.createElement("span");
+
     label.className = "check-row";
     label.setAttribute("for", id);
-    label.innerHTML = `<input id="${id}" type="checkbox"><span>${item}</span>`;
+    checkbox.id = id;
+    checkbox.type = "checkbox";
+    text.textContent = item;
+
+    label.append(checkbox, text);
     elements.checklistForm.appendChild(label);
   });
 }
@@ -101,6 +118,41 @@ function renderFeedback(exercise) {
   });
 }
 
+function renderList(listElement, items) {
+  listElement.innerHTML = "";
+
+  items.forEach((text) => {
+    const item = document.createElement("li");
+    item.textContent = text;
+    listElement.appendChild(item);
+  });
+}
+
+function renderSoftSkills() {
+  elements.softSkillsGrid.innerHTML = "";
+
+  window.QUIET_BUG_SOFT_SKILLS.forEach((skill) => {
+    const card = document.createElement("article");
+    const title = document.createElement("h3");
+    const question = document.createElement("p");
+    const questionLabel = document.createElement("strong");
+    const guidance = document.createElement("p");
+    const answerFrame = document.createElement("p");
+
+    card.className = "soft-skill-card";
+    answerFrame.className = "answer-frame";
+
+    title.textContent = skill.title;
+    questionLabel.textContent = "Question: ";
+    question.append(questionLabel, skill.question);
+    guidance.textContent = skill.guidance;
+    answerFrame.textContent = skill.answerFrame;
+
+    card.append(title, question, guidance, answerFrame);
+    elements.softSkillsGrid.appendChild(card);
+  });
+}
+
 function render() {
   const exercise = getSelectedExercise();
 
@@ -118,7 +170,10 @@ function render() {
   elements.employerPerspective.textContent = exercise.employerPerspective;
 
   renderHints(exercise);
+  renderList(elements.followUpList, exercise.followUps);
+  renderList(elements.edgeCaseList, exercise.edgeCases);
   renderFeedback(exercise);
+  renderSoftSkills();
 }
 
 elements.hintButton.addEventListener("click", () => {

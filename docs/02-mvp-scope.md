@@ -12,6 +12,23 @@ Junior developers often freeze during live coding interviews because they do not
 
 Can Quiet Bug help a junior developer feel less blocked during live coding practice?
 
+## Difficulty Positioning
+
+Quiet Bug should not become an advanced algorithm platform.
+
+The first exercises should stay realistic for junior candidates with little or no professional experience.
+
+To avoid feeling too easy, the product adds interview pressure around each exercise:
+
+- edge case checks
+- follow-up questions
+- oral explanation practice
+- panic recovery hints
+- employer perspective
+- soft skills prompts
+
+The coding problems can be simple, but the interview practice should feel serious and useful.
+
 ## Included in MVP v0
 
 The first version will include:
@@ -22,6 +39,8 @@ The first version will include:
 - Thinking checklist before coding
 - Code textarea
 - Panic recovery hints
+- Edge case prompts
+- Interview follow-up questions
 - Oral explanation section
 - Final solution section
 - Interview feedback section
@@ -131,8 +150,10 @@ The MVP is successful if a junior developer can:
 - choose a Java exercise
 - follow the thinking checklist
 - use panic recovery hints when stuck
+- answer edge case and follow-up questions
 - read an oral explanation example
 - compare their answer with a solution
+- practise soft skills for the interview day
 - feel more prepared for live coding interviews
 
 ## MVP Principle
