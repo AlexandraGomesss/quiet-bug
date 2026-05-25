@@ -10,7 +10,9 @@ const checklistItems = [
 
 const state = {
   selectedId: 1,
-  visibleHints: 0
+  visibleHints: 0,
+  codeByExerciseId: {},
+  checklistByExerciseId: {}
 };
 
 const elements = {
@@ -38,6 +40,20 @@ function getSelectedExercise() {
   return window.QUIET_BUG_EXERCISES.find((exercise) => exercise.id === state.selectedId);
 }
 
+function getSelectedExerciseKey() {
+  return String(state.selectedId);
+}
+
+function getSavedCode(exercise) {
+  const exerciseKey = getSelectedExerciseKey();
+  return state.codeByExerciseId[exerciseKey] ?? exercise.starterCode;
+}
+
+function getSavedChecklist() {
+  const exerciseKey = getSelectedExerciseKey();
+  return state.checklistByExerciseId[exerciseKey] ?? [];
+}
+
 function renderExerciseList() {
   elements.exerciseList.innerHTML = "";
 
@@ -50,6 +66,7 @@ function renderExerciseList() {
     button.type = "button";
     button.dataset.exerciseId = exercise.id;
     button.classList.toggle("active", exercise.id === state.selectedId);
+    button.setAttribute("aria-current", exercise.id === state.selectedId ? "true" : "false");
 
     title.textContent = `${exercise.id}. ${exercise.title}`;
     pattern.textContent = exercise.pattern;
@@ -69,6 +86,8 @@ function renderExerciseList() {
 function renderChecklist() {
   elements.checklistForm.innerHTML = "";
 
+  const savedChecklist = getSavedChecklist();
+
   checklistItems.forEach((item, index) => {
     const id = `check-${index}`;
     const label = document.createElement("label");
@@ -79,6 +98,7 @@ function renderChecklist() {
     label.setAttribute("for", id);
     checkbox.id = id;
     checkbox.type = "checkbox";
+    checkbox.checked = savedChecklist.includes(index);
     text.textContent = item;
 
     label.append(checkbox, text);
@@ -164,7 +184,7 @@ function render() {
   elements.exercisePrompt.textContent = exercise.prompt;
   elements.exampleInput.textContent = exercise.exampleInput;
   elements.expectedOutput.textContent = exercise.expectedOutput;
-  elements.codeArea.value = exercise.starterCode;
+  elements.codeArea.value = getSavedCode(exercise);
   elements.oralExplanation.textContent = exercise.oralExplanation;
   elements.suggestedSolution.textContent = exercise.solution;
   elements.employerPerspective.textContent = exercise.employerPerspective;
@@ -182,8 +202,27 @@ elements.hintButton.addEventListener("click", () => {
   renderHints(exercise);
 });
 
+elements.codeArea.addEventListener("input", () => {
+  const exerciseKey = getSelectedExerciseKey();
+  state.codeByExerciseId[exerciseKey] = elements.codeArea.value;
+});
+
+elements.checklistForm.addEventListener("change", () => {
+  const exerciseKey = getSelectedExerciseKey();
+  const checkedIndexes = [...elements.checklistForm.querySelectorAll("input")]
+    .map((checkbox, index) => (checkbox.checked ? index : null))
+    .filter((index) => index !== null);
+
+  state.checklistByExerciseId[exerciseKey] = checkedIndexes;
+});
+
 elements.resetButton.addEventListener("click", () => {
+  const exerciseKey = getSelectedExerciseKey();
+
+  delete state.codeByExerciseId[exerciseKey];
+  delete state.checklistByExerciseId[exerciseKey];
   state.visibleHints = 0;
+
   render();
 });
 

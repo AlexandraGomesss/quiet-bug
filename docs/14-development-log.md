@@ -15,6 +15,39 @@ This is useful for:
 
 ---
 
+## 2026-05-25
+
+### What I worked on
+
+- Reviewed the first static frontend practice flow.
+- Improved the code textarea behavior so each exercise keeps its own draft while the page is open.
+- Improved the thinking checklist so each exercise keeps its own checked items while the page is open.
+- Updated the reset button so it clears the current exercise draft, checklist and visible hints.
+- Renamed the reset button to make it clear that it resets only the current exercise.
+- Added an accessibility state to the active exercise button with `aria-current`.
+- Updated the current status document to reflect the refined practice flow.
+- Manually tested the flow in the browser after opening `index.html`.
+
+### Decisions made
+
+- Draft code and checklist progress will be stored in JavaScript state for now.
+- This keeps MVP v0 simple because there is still no login, backend or database.
+- Reset should affect only the current exercise, not every exercise.
+- Button labels should describe the action clearly when a command could otherwise feel risky.
+
+### Problems found
+
+- The first version replaced the textarea with starter code every time `render()` ran.
+- That meant a learner could lose their draft after switching exercises.
+- The current status project tree was incomplete and its code block was not closed.
+
+### Next steps
+
+- Review desktop and mobile layout.
+- Decide whether the next improvement should be local browser persistence or visual layout polish.
+
+---
+
 ## 2026-05-22
 
 ### What I worked on

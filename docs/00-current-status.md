@@ -22,7 +22,7 @@ Frontend foundation.
 
 ## Last Completed Step
 
-Created the first static frontend structure.
+Refined the first static frontend practice flow.
 
 Frontend foundation includes:
 
@@ -39,10 +39,13 @@ Frontend foundation includes:
 - edge case prompts
 - soft skills interview practice cards
 - oral explanation, solution, feedback and employer perspective sections
+- per-exercise draft code memory while the page is open
+- per-exercise checklist progress while the page is open
+- reset behavior for the current exercise
 
 ## Next Step
 
-Review the static frontend in the browser and refine the first practice flow.
+Review the static frontend in the browser and continue refining the first practice flow.
 
 Next review target:
 
@@ -82,3 +85,9 @@ quiet-bug/
     07-content-plan.md
     13-security-notes.md
     14-development-log.md
+  src/
+    app.js
+    exercises.js
+    styles.css
+  index.html
+```
