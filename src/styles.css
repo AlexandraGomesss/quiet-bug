@@ -130,6 +130,13 @@ textarea {
   line-height: 1.25;
 }
 
+.exercise-button .exercise-progress {
+  margin-top: 8px;
+  color: var(--blue);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
 .workspace {
   min-width: 0;
   padding: 24px;

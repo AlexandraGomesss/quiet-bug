@@ -41,6 +41,7 @@ Frontend foundation includes:
 - oral explanation, solution, feedback and employer perspective sections
 - per-exercise draft code memory in the browser
 - per-exercise checklist progress in the browser
+- progress labels under each exercise button
 - reset behavior for the current exercise
 
 ## Next Step
@@ -52,6 +53,7 @@ Next review target:
 - layout on desktop and mobile
 - exercise switching
 - draft persistence after page refresh
+- progress label behavior
 - hint behavior
 - follow-up question usefulness
 - soft skills card usefulness

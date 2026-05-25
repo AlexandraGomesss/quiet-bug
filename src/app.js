@@ -124,6 +124,25 @@ function getSavedChecklist() {
   return state.checklistByExerciseId[exerciseKey] ?? [];
 }
 
+function getExerciseProgressLabel(exercise) {
+  const exerciseKey = String(exercise.id);
+  const savedCode = state.codeByExerciseId[exerciseKey];
+  const savedChecklist = state.checklistByExerciseId[exerciseKey] ?? [];
+  const hasCodeDraft = savedCode !== undefined && savedCode !== exercise.starterCode;
+  const hasChecklistProgress = savedChecklist.length > 0;
+  const isChecklistComplete = savedChecklist.length === checklistItems.length;
+
+  if (isChecklistComplete) {
+    return "Checklist complete";
+  }
+
+  if (hasCodeDraft || hasChecklistProgress) {
+    return "In progress";
+  }
+
+  return "Not started";
+}
+
 function renderExerciseList() {
   elements.exerciseList.innerHTML = "";
 
@@ -131,6 +150,7 @@ function renderExerciseList() {
     const button = document.createElement("button");
     const title = document.createElement("strong");
     const pattern = document.createElement("span");
+    const progress = document.createElement("span");
 
     button.className = "exercise-button";
     button.type = "button";
@@ -140,8 +160,10 @@ function renderExerciseList() {
 
     title.textContent = `${exercise.id}. ${exercise.title}`;
     pattern.textContent = exercise.pattern;
+    progress.className = "exercise-progress";
+    progress.textContent = getExerciseProgressLabel(exercise);
 
-    button.append(title, pattern);
+    button.append(title, pattern, progress);
 
     button.addEventListener("click", () => {
       state.selectedId = exercise.id;
@@ -277,6 +299,7 @@ elements.codeArea.addEventListener("input", () => {
   const exerciseKey = getSelectedExerciseKey();
   state.codeByExerciseId[exerciseKey] = elements.codeArea.value;
   saveProgress();
+  renderExerciseList();
 });
 
 elements.checklistForm.addEventListener("change", () => {
@@ -287,6 +310,7 @@ elements.checklistForm.addEventListener("change", () => {
 
   state.checklistByExerciseId[exerciseKey] = checkedIndexes;
   saveProgress();
+  renderExerciseList();
 });
 
 elements.resetButton.addEventListener("click", () => {

@@ -26,6 +26,7 @@ This is useful for:
 - Renamed the reset button to make it clear that it resets only the current exercise.
 - Added an accessibility state to the active exercise button with `aria-current`.
 - Added browser persistence with `localStorage` so code drafts, checklist progress and the selected exercise survive page refresh.
+- Added progress labels under each exercise button: `Not started`, `In progress` and `Checklist complete`.
 - Updated the current status document to reflect the refined practice flow.
 - Manually tested the flow in the browser after opening `index.html`.
 
@@ -36,19 +37,22 @@ This is useful for:
 - Browser persistence is useful for practice drafts, but it is not a replacement for real accounts or database storage later.
 - Reset should affect only the current exercise, not every exercise.
 - Button labels should describe the action clearly when a command could otherwise feel risky.
+- Progress labels should use existing saved draft and checklist data before adding any new data model.
 
 ### Problems found
 
 - The first version replaced the textarea with starter code every time `render()` ran.
 - That meant a learner could lose their draft after switching exercises.
 - Temporary JavaScript state fixed exercise switching, but still lost progress after refreshing the page.
+- The progress label changed to `In progress`, but did not update to `Checklist complete` until the exercise list was re-rendered after checklist changes.
 - The current status project tree was incomplete and its code block was not closed.
 
 ### Next steps
 
 - Manually test draft persistence after refreshing the page.
+- Manually test progress labels after typing code, checking one item, checking all items and resetting the current exercise.
 - Review desktop and mobile layout.
-- Decide whether the next improvement should be visual layout polish or a clearer completion/progress indicator.
+- Decide whether the next improvement should be visual layout polish or a clearer completion summary.
 
 ---
 
