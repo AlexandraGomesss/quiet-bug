@@ -39,8 +39,8 @@ Frontend foundation includes:
 - edge case prompts
 - soft skills interview practice cards
 - oral explanation, solution, feedback and employer perspective sections
-- per-exercise draft code memory while the page is open
-- per-exercise checklist progress while the page is open
+- per-exercise draft code memory in the browser
+- per-exercise checklist progress in the browser
 - reset behavior for the current exercise
 
 ## Next Step
@@ -51,6 +51,7 @@ Next review target:
 
 - layout on desktop and mobile
 - exercise switching
+- draft persistence after page refresh
 - hint behavior
 - follow-up question usefulness
 - soft skills card usefulness

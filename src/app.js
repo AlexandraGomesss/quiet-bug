@@ -8,6 +8,8 @@ const checklistItems = [
   "How would I explain this out loud?"
 ];
 
+const progressStorageKey = "quietBugProgressV1";
+
 const state = {
   selectedId: 1,
   visibleHints: 0,
@@ -38,6 +40,74 @@ const elements = {
 
 function getSelectedExercise() {
   return window.QUIET_BUG_EXERCISES.find((exercise) => exercise.id === state.selectedId);
+}
+
+function isRecord(value) {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function getStorage() {
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
+
+function loadSavedProgress() {
+  const storage = getStorage();
+
+  if (!storage) {
+    return;
+  }
+
+  const savedProgress = storage.getItem(progressStorageKey);
+
+  if (!savedProgress) {
+    return;
+  }
+
+  try {
+    const parsedProgress = JSON.parse(savedProgress);
+
+    if (isRecord(parsedProgress.codeByExerciseId)) {
+      state.codeByExerciseId = parsedProgress.codeByExerciseId;
+    }
+
+    if (isRecord(parsedProgress.checklistByExerciseId)) {
+      state.checklistByExerciseId = parsedProgress.checklistByExerciseId;
+    }
+
+    const savedExerciseExists = window.QUIET_BUG_EXERCISES.some(
+      (exercise) => exercise.id === parsedProgress.selectedId
+    );
+
+    if (savedExerciseExists) {
+      state.selectedId = parsedProgress.selectedId;
+    }
+  } catch {
+    storage.removeItem(progressStorageKey);
+  }
+}
+
+function saveProgress() {
+  const storage = getStorage();
+
+  if (!storage) {
+    return;
+  }
+
+  const progress = {
+    selectedId: state.selectedId,
+    codeByExerciseId: state.codeByExerciseId,
+    checklistByExerciseId: state.checklistByExerciseId
+  };
+
+  try {
+    storage.setItem(progressStorageKey, JSON.stringify(progress));
+  } catch {
+    // The app can still work without persistence if browser storage is blocked.
+  }
 }
 
 function getSelectedExerciseKey() {
@@ -76,6 +146,7 @@ function renderExerciseList() {
     button.addEventListener("click", () => {
       state.selectedId = exercise.id;
       state.visibleHints = 0;
+      saveProgress();
       render();
     });
 
@@ -205,6 +276,7 @@ elements.hintButton.addEventListener("click", () => {
 elements.codeArea.addEventListener("input", () => {
   const exerciseKey = getSelectedExerciseKey();
   state.codeByExerciseId[exerciseKey] = elements.codeArea.value;
+  saveProgress();
 });
 
 elements.checklistForm.addEventListener("change", () => {
@@ -214,6 +286,7 @@ elements.checklistForm.addEventListener("change", () => {
     .filter((index) => index !== null);
 
   state.checklistByExerciseId[exerciseKey] = checkedIndexes;
+  saveProgress();
 });
 
 elements.resetButton.addEventListener("click", () => {
@@ -223,7 +296,9 @@ elements.resetButton.addEventListener("click", () => {
   delete state.checklistByExerciseId[exerciseKey];
   state.visibleHints = 0;
 
+  saveProgress();
   render();
 });
 
+loadSavedProgress();
 render();

@@ -25,13 +25,15 @@ This is useful for:
 - Updated the reset button so it clears the current exercise draft, checklist and visible hints.
 - Renamed the reset button to make it clear that it resets only the current exercise.
 - Added an accessibility state to the active exercise button with `aria-current`.
+- Added browser persistence with `localStorage` so code drafts, checklist progress and the selected exercise survive page refresh.
 - Updated the current status document to reflect the refined practice flow.
 - Manually tested the flow in the browser after opening `index.html`.
 
 ### Decisions made
 
-- Draft code and checklist progress will be stored in JavaScript state for now.
+- Draft code and checklist progress will be stored in browser `localStorage` for now.
 - This keeps MVP v0 simple because there is still no login, backend or database.
+- Browser persistence is useful for practice drafts, but it is not a replacement for real accounts or database storage later.
 - Reset should affect only the current exercise, not every exercise.
 - Button labels should describe the action clearly when a command could otherwise feel risky.
 
@@ -39,12 +41,14 @@ This is useful for:
 
 - The first version replaced the textarea with starter code every time `render()` ran.
 - That meant a learner could lose their draft after switching exercises.
+- Temporary JavaScript state fixed exercise switching, but still lost progress after refreshing the page.
 - The current status project tree was incomplete and its code block was not closed.
 
 ### Next steps
 
+- Manually test draft persistence after refreshing the page.
 - Review desktop and mobile layout.
-- Decide whether the next improvement should be local browser persistence or visual layout polish.
+- Decide whether the next improvement should be visual layout polish or a clearer completion/progress indicator.
 
 ---
 
