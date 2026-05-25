@@ -43,6 +43,7 @@ Frontend foundation includes:
 - per-exercise checklist progress in the browser
 - progress labels under each exercise button
 - reset behavior for the current exercise
+- clear all saved progress action with confirmation
 
 ## Next Step
 
@@ -54,6 +55,7 @@ Next review target:
 - exercise switching
 - draft persistence after page refresh
 - progress label behavior
+- clear all saved progress confirmation
 - hint behavior
 - follow-up question usefulness
 - soft skills card usefulness

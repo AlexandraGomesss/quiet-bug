@@ -35,7 +35,8 @@ const elements = {
   feedbackList: document.querySelector("#feedbackList"),
   employerPerspective: document.querySelector("#employerPerspective"),
   softSkillsGrid: document.querySelector("#softSkillsGrid"),
-  resetButton: document.querySelector("#resetButton")
+  resetButton: document.querySelector("#resetButton"),
+  clearProgressButton: document.querySelector("#clearProgressButton")
 };
 
 function getSelectedExercise() {
@@ -319,6 +320,22 @@ elements.resetButton.addEventListener("click", () => {
   delete state.codeByExerciseId[exerciseKey];
   delete state.checklistByExerciseId[exerciseKey];
   state.visibleHints = 0;
+
+  saveProgress();
+  render();
+});
+
+elements.clearProgressButton.addEventListener("click", () => {
+  const confirmed = window.confirm("Clear all saved progress for every exercise?");
+
+  if (!confirmed) {
+    return;
+  }
+
+  state.selectedId = 1;
+  state.visibleHints = 0;
+  state.codeByExerciseId = {};
+  state.checklistByExerciseId = {};
 
   saveProgress();
   render();

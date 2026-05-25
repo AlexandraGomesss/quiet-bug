@@ -160,6 +160,9 @@ textarea {
 }
 
 .topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   flex: 0 0 auto;
 }
 
@@ -296,7 +299,8 @@ pre {
 }
 
 .primary-button,
-.secondary-button {
+.secondary-button,
+.danger-button {
   min-height: 42px;
   padding: 9px 14px;
   border-radius: 8px;
@@ -319,6 +323,12 @@ pre {
   border: 1px solid var(--blue);
   background: var(--blue-soft);
   color: #17374a;
+}
+
+.danger-button {
+  border: 1px solid #9f3a2f;
+  background: #fdecea;
+  color: #81291f;
 }
 
 .feedback-list {

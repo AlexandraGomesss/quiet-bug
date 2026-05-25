@@ -27,6 +27,7 @@ This is useful for:
 - Added an accessibility state to the active exercise button with `aria-current`.
 - Added browser persistence with `localStorage` so code drafts, checklist progress and the selected exercise survive page refresh.
 - Added progress labels under each exercise button: `Not started`, `In progress` and `Checklist complete`.
+- Added a `Clear all saved progress` button with browser confirmation.
 - Updated the current status document to reflect the refined practice flow.
 - Manually tested the flow in the browser after opening `index.html`.
 
@@ -38,6 +39,8 @@ This is useful for:
 - Reset should affect only the current exercise, not every exercise.
 - Button labels should describe the action clearly when a command could otherwise feel risky.
 - Progress labels should use existing saved draft and checklist data before adding any new data model.
+- Clearing all saved progress should require confirmation because it affects every exercise.
+- Development should continue step by step, with the change explained before coding and tested before pushing.
 
 ### Problems found
 
@@ -47,10 +50,19 @@ This is useful for:
 - The progress label changed to `In progress`, but did not update to `Checklist complete` until the exercise list was re-rendered after checklist changes.
 - The current status project tree was incomplete and its code block was not closed.
 
+### Learning notes
+
+- JavaScript state is temporary memory while the page is open.
+- `localStorage` is browser memory that can survive a page refresh, but it is not a backend or database.
+- Rendering means rebuilding what the user sees from the current data.
+- If data changes but the screen does not update, the affected part of the UI needs to be re-rendered.
+- Destructive actions should use clear labels and confirmation.
+
 ### Next steps
 
 - Manually test draft persistence after refreshing the page.
 - Manually test progress labels after typing code, checking one item, checking all items and resetting the current exercise.
+- Manually test cancelling and confirming the clear all saved progress action.
 - Review desktop and mobile layout.
 - Decide whether the next improvement should be visual layout polish or a clearer completion summary.
 
