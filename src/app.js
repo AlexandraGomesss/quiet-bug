@@ -13,6 +13,7 @@ const progressStorageKey = "quietBugProgressV1";
 const state = {
   selectedId: 1,
   visibleHints: 0,
+  solutionVisible: false,
   codeByExerciseId: {},
   checklistByExerciseId: {}
 };
@@ -34,9 +35,12 @@ const elements = {
   suggestedSolution: document.querySelector("#suggestedSolution"),
   feedbackList: document.querySelector("#feedbackList"),
   employerPerspective: document.querySelector("#employerPerspective"),
+  solutionGate: document.querySelector("#solutionGate"),
+  showSolutionButton: document.querySelector("#showSolutionButton"),
   softSkillsGrid: document.querySelector("#softSkillsGrid"),
   resetButton: document.querySelector("#resetButton"),
-  clearProgressButton: document.querySelector("#clearProgressButton")
+  clearProgressButton: document.querySelector("#clearProgressButton"),
+  flowSteps: document.querySelectorAll(".flow-step")
 };
 
 function getSelectedExercise() {
@@ -144,6 +148,43 @@ function getExerciseProgressLabel(exercise) {
   return "Not started";
 }
 
+function getCurrentStage(exercise) {
+  const savedCode = getSavedCode(exercise);
+  const savedChecklist = getSavedChecklist();
+  const hasCodeDraft = savedCode !== exercise.starterCode;
+  const hasChecklistProgress = savedChecklist.length > 0;
+  const isChecklistComplete = savedChecklist.length === checklistItems.length;
+
+  if (isChecklistComplete && hasCodeDraft) {
+    return "explain";
+  }
+
+  if (hasCodeDraft) {
+    return "code";
+  }
+
+  if (hasChecklistProgress) {
+    return "plan";
+  }
+
+  return "understand";
+}
+
+function renderPracticeFlow(exercise) {
+  const currentStage = getCurrentStage(exercise);
+  const stages = ["understand", "plan", "code", "explain", "review"];
+  const currentStageIndex = stages.indexOf(currentStage);
+
+  elements.flowSteps.forEach((step) => {
+    const stageIndex = stages.indexOf(step.dataset.stage);
+    const isCurrent = step.dataset.stage === currentStage;
+    const isComplete = stageIndex < currentStageIndex;
+
+    step.classList.toggle("active", isCurrent);
+    step.classList.toggle("complete", isComplete);
+  });
+}
+
 function renderExerciseList() {
   elements.exerciseList.innerHTML = "";
 
@@ -169,6 +210,7 @@ function renderExerciseList() {
     button.addEventListener("click", () => {
       state.selectedId = exercise.id;
       state.visibleHints = 0;
+      state.solutionVisible = false;
       saveProgress();
       render();
     });
@@ -232,6 +274,11 @@ function renderFeedback(exercise) {
   });
 }
 
+function renderSolution() {
+  elements.solutionGate.hidden = state.solutionVisible;
+  elements.suggestedSolution.parentElement.hidden = !state.solutionVisible;
+}
+
 function renderList(listElement, items) {
   listElement.innerHTML = "";
 
@@ -272,6 +319,8 @@ function render() {
 
   renderExerciseList();
   renderChecklist();
+  renderPracticeFlow(exercise);
+  renderSolution();
 
   elements.exerciseMeta.textContent = `${exercise.language} / ${exercise.level} / ${exercise.pattern}`;
   elements.exerciseTitle.textContent = exercise.title;
@@ -294,6 +343,11 @@ elements.hintButton.addEventListener("click", () => {
   const exercise = getSelectedExercise();
   state.visibleHints = Math.min(state.visibleHints + 1, exercise.hints.length);
   renderHints(exercise);
+});
+
+elements.showSolutionButton.addEventListener("click", () => {
+  state.solutionVisible = true;
+  renderSolution();
 });
 
 elements.codeArea.addEventListener("input", () => {
@@ -320,6 +374,7 @@ elements.resetButton.addEventListener("click", () => {
   delete state.codeByExerciseId[exerciseKey];
   delete state.checklistByExerciseId[exerciseKey];
   state.visibleHints = 0;
+  state.solutionVisible = false;
 
   saveProgress();
   render();
@@ -334,6 +389,7 @@ elements.clearProgressButton.addEventListener("click", () => {
 
   state.selectedId = 1;
   state.visibleHints = 0;
+  state.solutionVisible = false;
   state.codeByExerciseId = {};
   state.checklistByExerciseId = {};
 

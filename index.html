@@ -36,6 +36,44 @@
           </div>
         </section>
 
+        <section class="practice-flow" aria-label="Practice flow">
+          <div class="flow-step" data-stage="understand">
+            <span>1</span>
+            <div>
+              <strong>Understand</strong>
+              <p>Read the prompt and examples.</p>
+            </div>
+          </div>
+          <div class="flow-step" data-stage="plan">
+            <span>2</span>
+            <div>
+              <strong>Plan</strong>
+              <p>Use the checklist before coding.</p>
+            </div>
+          </div>
+          <div class="flow-step" data-stage="code">
+            <span>3</span>
+            <div>
+              <strong>Code</strong>
+              <p>Write a simple first solution.</p>
+            </div>
+          </div>
+          <div class="flow-step" data-stage="explain">
+            <span>4</span>
+            <div>
+              <strong>Explain</strong>
+              <p>Practise saying your approach.</p>
+            </div>
+          </div>
+          <div class="flow-step" data-stage="review">
+            <span>5</span>
+            <div>
+              <strong>Review</strong>
+              <p>Compare with feedback after trying.</p>
+            </div>
+          </div>
+        </section>
+
         <section class="exercise-grid">
           <article class="panel problem-panel">
             <div class="panel-heading">
@@ -83,7 +121,7 @@
         </section>
 
         <section class="details-grid">
-          <article class="panel">
+          <article class="panel detail-card detail-card-practice">
             <div class="panel-heading">
               <p class="eyebrow">Interview pressure</p>
               <h3>Follow-up questions</h3>
@@ -91,7 +129,7 @@
             <ul id="followUpList" class="feedback-list"></ul>
           </article>
 
-          <article class="panel">
+          <article class="panel detail-card detail-card-practice">
             <div class="panel-heading">
               <p class="eyebrow">Edge cases</p>
               <h3>Before you finish</h3>
@@ -99,7 +137,7 @@
             <ul id="edgeCaseList" class="feedback-list"></ul>
           </article>
 
-          <article class="panel">
+          <article class="panel detail-card detail-card-practice">
             <div class="panel-heading">
               <p class="eyebrow">Communication</p>
               <h3>Speak while coding</h3>
@@ -107,15 +145,19 @@
             <p id="oralExplanation"></p>
           </article>
 
-          <article class="panel">
+          <article class="panel detail-card detail-card-review">
             <div class="panel-heading">
               <p class="eyebrow">Review</p>
               <h3>Suggested solution</h3>
             </div>
+            <div class="solution-gate" id="solutionGate">
+              <p>Try writing your own solution first. The goal is not perfection, it is getting unstuck step by step.</p>
+              <button class="secondary-button" id="showSolutionButton" type="button">I tried, show solution</button>
+            </div>
             <pre class="solution-block"><code id="suggestedSolution"></code></pre>
           </article>
 
-          <article class="panel">
+          <article class="panel detail-card detail-card-review">
             <div class="panel-heading">
               <p class="eyebrow">Interview lens</p>
               <h3>Feedback</h3>
@@ -123,7 +165,7 @@
             <ul id="feedbackList" class="feedback-list"></ul>
           </article>
 
-          <article class="panel">
+          <article class="panel detail-card detail-card-review">
             <div class="panel-heading">
               <p class="eyebrow">Employer mindset</p>
               <h3>What they notice</h3>

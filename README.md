@@ -27,6 +27,6 @@ The first version focuses on:
 
 ## Current Status
 
-Static frontend foundation started and first practice flow refined.
+Static frontend foundation started and guided practice flow refined.
 
-The project now includes a dependency-free HTML/CSS/JavaScript prototype using static Java exercise data, browser-saved practice drafts and per-exercise checklist progress.
+The project now includes a dependency-free HTML/CSS/JavaScript prototype using static Java exercise data, browser-saved practice drafts, per-exercise checklist progress, a guided interview-practice flow and a hidden suggested solution reveal step.

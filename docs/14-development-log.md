@@ -15,6 +15,53 @@ This is useful for:
 
 ---
 
+## 2026-05-27
+
+### What I worked on
+
+- Reviewed the first practice flow manually in the browser.
+- Confirmed exercise switching keeps draft code.
+- Confirmed draft code persists after refresh.
+- Confirmed checklist progress updates exercise labels from `In progress` to `Checklist complete`.
+- Confirmed `Reset current exercise` clears only the selected exercise.
+- Confirmed `Clear all saved progress` respects browser cancel/confirm behavior.
+- Reviewed the lower details section and identified that the cards looked too visually similar.
+- Started a calmer visual direction for the interface, focused on a mentor-like learning workspace.
+- Added subtle visual differences between practice prompt cards and review material cards.
+- Added a guided practice flow: `Understand`, `Plan`, `Code`, `Explain` and `Review`.
+- Connected the guided flow to existing progress state so it reacts to checklist and code progress.
+- Hid the suggested solution by default behind an `I tried, show solution` button.
+- Updated the README and current status documentation.
+
+### Decisions made
+
+- Quiet Bug should feel like calm interview practice, not a competitive coding game.
+- The next UX improvements should guide the learner through the interview process instead of showing every section with equal importance.
+- Suggested solutions should be available, but not immediately visible.
+- The solution reveal should encourage trying first without blocking learners who are genuinely stuck.
+- Interactivity should build confidence and structure, not rely on points, streaks, badges or other gamified pressure.
+
+### Problems found
+
+- The lower details cards had weak hierarchy because all sections looked equally important.
+- Showing the suggested solution immediately could encourage learners to read the answer before thinking.
+- The page was useful, but still felt too much like a static reference page instead of a guided practice session.
+
+### Learning notes
+
+- A guided flow can make a learning product feel more intentional without adding complex logic.
+- Hiding the solution creates a better learning habit while still respecting beginner frustration.
+- Small state-driven UI changes can improve the experience without introducing a framework.
+
+### Next steps
+
+- Review the guided flow visually on desktop and mobile.
+- Test that the suggested solution is hidden on page load and after switching exercises.
+- Decide whether feedback and employer mindset should also be hidden until the learner reaches the review step.
+- Consider adding an attempt summary or confidence self-rating after the learner reveals the solution.
+
+---
+
 ## 2026-05-25
 
 ### What I worked on

@@ -22,7 +22,7 @@ Frontend foundation.
 
 ## Last Completed Step
 
-Refined the first static frontend practice flow.
+Refined the first static frontend practice flow into a more guided learning experience.
 
 Frontend foundation includes:
 
@@ -35,32 +35,38 @@ Frontend foundation includes:
 - thinking checklist
 - code textarea
 - progressive panic recovery hints
+- guided practice flow with `Understand`, `Plan`, `Code`, `Explain` and `Review` stages
 - interview follow-up questions
 - edge case prompts
 - soft skills interview practice cards
-- oral explanation, solution, feedback and employer perspective sections
+- oral explanation, gated suggested solution, feedback and employer perspective sections
 - per-exercise draft code memory in the browser
 - per-exercise checklist progress in the browser
 - progress labels under each exercise button
 - reset behavior for the current exercise
 - clear all saved progress action with confirmation
+- calm mentor visual styling for the practice workspace
+- hidden suggested solution reveal button to encourage trying before looking
 
 ## Next Step
 
-Review the static frontend in the browser and continue refining the first practice flow.
+Review the guided static frontend in the browser and continue refining the interview practice flow.
 
 Next review target:
 
 - layout on desktop and mobile
+- guided stage behavior
 - exercise switching
 - draft persistence after page refresh
 - progress label behavior
 - clear all saved progress confirmation
 - hint behavior
+- hidden suggested solution reveal behavior
 - follow-up question usefulness
 - soft skills card usefulness
 - code textarea reset behavior
 - content readability
+- whether the review material should stay visible or be revealed after an attempt
 
 ## Important Decisions
 
@@ -72,6 +78,8 @@ Next review target:
 - MVP v0 does not use AI feedback.
 - MVP v0 uses static exercise data first.
 - The first frontend prototype uses plain HTML, CSS and JavaScript.
+- Suggested solutions should not be shown immediately; learners should be encouraged to try first.
+- Interactivity should support calm practice and confidence, not gamification.
 - Backend and database will be added later.
 - The first version focuses on live coding fear, structure, communication, panic recovery and soft skills.
 
